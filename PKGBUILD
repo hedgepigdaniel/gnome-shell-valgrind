@@ -7,21 +7,20 @@ pkgdesc="Run GNOME with valgrind from display managers"
 arch=('any')
 depends=(gnome-session valgrind)
 source=(
-    gnome-valgrind-errors
+    gnome-shell-valgrind-errors
+    gnome-shell-valgrind-errors.desktop
+    gnome-valgrind.session
     gnome-valgrind-errors.desktop
-    gnome-valgrind-leaks
-    gnome-valgrind-leaks.desktop
 )
-md5sums=('e41ea6158d607f37f368509cd4d86b1e'
-         'ee8c1bcd7c034c30674c6915bb6ab573'
-         '7d9cdb2e7cb1a9fda9f7950ffff126a8'
-         '90e9d304738080d48d25e134afd83109')
+md5sums=('128ca0e44694745319a6a7f23ffbf3e9'
+         'd6fe378c3b7745d137d6b99de0a5ff02'
+         'f9c53c458b72061dab1fb32d85b27ee3'
+         '1fc615e707265d2cfe602783a57f4e00')
 
 package() {
-    install -D -m755 gnome-valgrind-errors "$pkgdir/usr/bin/gnome-valgrind-errors"
-    install -D -m755 gnome-valgrind-leaks "$pkgdir/usr/bin/gnome-valgrind-leaks"
+    install -D -m755 gnome-shell-valgrind-errors "$pkgdir/usr/bin/gnome-shell-valgrind-errors"
+    install -D -m644 gnome-shell-valgrind-errors.desktop "$pkgdir/usr/share/applications/org.gnome.Session-valgrind-errors.desktop"
+    install -D -m644 gnome-valgrind.session "$pkgdir/usr/share/gnome-session/sessions/gnome-valgrind-errors.session"
     install -D -m644 gnome-valgrind-errors.desktop "$pkgdir/usr/share/wayland-sessions/gnome-valgrind-errors.desktop"
-    install -D -m644 gnome-valgrind-leaks.desktop "$pkgdir/usr/share/wayland-sessions/gnome-valgrind-leaks.desktop"
     install -D -m644 gnome-valgrind-errors.desktop "$pkgdir/usr/share/xsessions/gnome-valgrind-errors.desktop"
-    install -D -m644 gnome-valgrind-leaks.desktop "$pkgdir/usr/share/xsessions/gnome-valgrind-leaks.desktop"
 }

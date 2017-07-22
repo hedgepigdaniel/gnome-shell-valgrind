@@ -6,12 +6,13 @@
 
 set +e
 
+
 SESSIONDIR="$HOME/.valgrind-session"
-OUTPREFIX=`date +%y-%m-%d_%H-%M-%S`
+DATE=`date +%y-%m-%d_%H-%M-%S`
 
 mkdir -p "$SESSIONDIR"
 
 export G_SLICE=always-malloc
 export G_DEBUG=gc-friendly
 
-valgrind -q --log-file="$SESSIONDIR/$OUTPREFIX.valgrind" --error-limit=no --trace-children=yes --num-callers=32 --undef-value-errors=no --leak-check=yes --show-reachable=no --leak-resolution=high /usr/bin/gnome-session
+valgrind -q --log-file="$SESSIONDIR/gnome-shell_$DATE.valgrind" --error-limit=no --trace-children=yes --num-callers=32 --undef-value-errors=no --leak-check=no /usr/bin/gnome-shell
