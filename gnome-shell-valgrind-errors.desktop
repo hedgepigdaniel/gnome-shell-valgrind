@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=GNOME Shell
+Name=GNOME Shell with Valgrind checking for memory errors
 Comment=Window management and application launching
 Exec=/usr/bin/gnome-shell-valgrind-errors
 X-GNOME-Bugzilla-Bugzilla=GNOME
