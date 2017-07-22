@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+#
+# This file is in the Public Domain.
+#
+# Authors: Hans Petter Jansson <hpj@copyleft.no>, Daniel Playfair Cal <daniel.playfair.cal@gmail.com>
+
+set +e
+
+SESSIONDIR="$HOME/.valgrind-session"
+OUTPREFIX=`date +%y-%m-%d_%H-%M-%S`
+
+mkdir -p "$SESSIONDIR"
+
+export G_SLICE=always-malloc
+export G_DEBUG=gc-friendly
+
+valgrind -q --log-file="$SESSIONDIR/$OUTPREFIX.valgrind" --error-limit=no --trace-children=yes --num-callers=32 --undef-value-errors=no --leak-check=yes --show-reachable=no --leak-resolution=high /usr/bin/gnome-session

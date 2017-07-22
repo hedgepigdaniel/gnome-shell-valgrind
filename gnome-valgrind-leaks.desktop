@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=GNOME Valgrind (Leaks)
+Comment=This session logs you into GNOME running with valgrind checking for memory errors and leaks
+Exec=gnome-valgrind-leaks
+TryExec=gnome-valgrind-leaks
+Type=Application
+DesktopNames=GNOME
