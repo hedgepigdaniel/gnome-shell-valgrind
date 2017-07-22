@@ -15,7 +15,7 @@ source=(
 md5sums=('128ca0e44694745319a6a7f23ffbf3e9'
          'f58f87d46682376a943706f56883e7a3'
          'f9c53c458b72061dab1fb32d85b27ee3'
-         '8c2018ec61fe56f42b6f6fea1ce9f1dc')
+         'bc4ec2cee0a3d7779383c94d280c15ed')
 
 package() {
     install -D -m755 gnome-shell-valgrind-errors "$pkgdir/usr/bin/gnome-shell-valgrind-errors"

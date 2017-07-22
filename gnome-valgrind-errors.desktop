@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=GNOME with Valgrind for checking for memory errors
 Comment=This session logs you into GNOME with Valgrind to check for memory errors
-Exec=gnome-session
+Exec=gnome-session --session=gnome-valgrind-errors
 TryExec=gnome-session --session=gnome-valgrind-errors
 Icon=
 Type=Application
