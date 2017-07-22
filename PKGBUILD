@@ -19,7 +19,7 @@ md5sums=('128ca0e44694745319a6a7f23ffbf3e9'
 
 package() {
     install -D -m755 gnome-shell-valgrind-errors "$pkgdir/usr/bin/gnome-shell-valgrind-errors"
-    install -D -m644 gnome-shell-valgrind-errors.desktop "$pkgdir/usr/share/applications/org.gnome.Session-valgrind-errors.desktop"
+    install -D -m644 gnome-shell-valgrind-errors.desktop "$pkgdir/usr/share/applications/org.gnome.Shell-valgrind-errors.desktop"
     install -D -m644 gnome-valgrind.session "$pkgdir/usr/share/gnome-session/sessions/gnome-valgrind-errors.session"
     install -D -m644 gnome-valgrind-errors.desktop "$pkgdir/usr/share/wayland-sessions/gnome-valgrind-errors.desktop"
     install -D -m644 gnome-valgrind-errors.desktop "$pkgdir/usr/share/xsessions/gnome-valgrind-errors.desktop"
