@@ -12,7 +12,7 @@ source=(
     gnome-valgrind.session
     gnome-valgrind-errors.desktop
 )
-md5sums=('128ca0e44694745319a6a7f23ffbf3e9'
+md5sums=('847bf9945ecfd1ffa8d09eee738d1417'
          'f58f87d46682376a943706f56883e7a3'
          'f9c53c458b72061dab1fb32d85b27ee3'
          '9054476686470f0bf45aab63ba61d22d')

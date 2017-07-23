@@ -9,10 +9,13 @@ set +e
 
 SESSIONDIR="$HOME/.valgrind-session"
 DATE=`date +%y-%m-%d_%H-%M-%S`
+LOG_NAME="$SESSIONDIR/$DATE"
 
 mkdir -p "$SESSIONDIR"
 
 export G_SLICE=always-malloc
 export G_DEBUG=gc-friendly
 
-valgrind -q --log-file="$SESSIONDIR/gnome-shell_$DATE.valgrind" --error-limit=no --trace-children=yes --num-callers=32 --undef-value-errors=no --leak-check=no /usr/bin/gnome-shell
+valgrind -q --log-file="$LOG_NAME.valgrind" --error-limit=no --trace-children=no --num-callers=32 --undef-value-errors=no --leak-check=no /usr/bin/gnome-shell "$@"
+
+echo "$?" > "$LOG_NAME.exitcode"
