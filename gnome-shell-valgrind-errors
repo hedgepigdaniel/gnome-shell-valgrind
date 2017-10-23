@@ -24,6 +24,7 @@ valgrind \
     --num-callers=32 \
     --undef-value-errors=no \
     --leak-check=no \
+    --vgdb=full --vgdb-error=1 \
     /usr/bin/gnome-shell "$@"
 
 echo "$?" > "$LOG_NAME.exitcode"
