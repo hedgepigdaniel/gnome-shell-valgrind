@@ -13,8 +13,8 @@ source=(
     gnome-valgrind-errors.desktop
 )
 md5sums=('a0ee7338ed0a6211e04ba6e3f4820ce7'
-         'f58f87d46682376a943706f56883e7a3'
-         'f9c53c458b72061dab1fb32d85b27ee3'
+         '08e983491f0e9621a3bf6d07861bbaaf'
+         'b80f8ac6e603369ba70a1db709a968cd'
          '9054476686470f0bf45aab63ba61d22d')
 
 package() {
