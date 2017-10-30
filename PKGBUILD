@@ -7,20 +7,37 @@ pkgdesc="Run GNOME with valgrind from display managers"
 arch=('any')
 depends=(gnome-session valgrind)
 source=(
-    gnome-shell-valgrind-errors
-    gnome-shell-valgrind-errors.desktop
+    gnome-shell-valgrind
+    gnome-shell-gdb
+    gnome-shell-valgrind.desktop
+    gnome-shell-gdb.desktop
     gnome-valgrind.session
-    gnome-valgrind-errors.desktop
+    gnome-gdb.session
+    gnome-valgrind.desktop
+    gnome-gdb.desktop
 )
 md5sums=('a0ee7338ed0a6211e04ba6e3f4820ce7'
-         '08e983491f0e9621a3bf6d07861bbaaf'
-         'b80f8ac6e603369ba70a1db709a968cd'
-         '9054476686470f0bf45aab63ba61d22d')
+         '46b5cca2865590e180e1a208678caa89'
+         '10dc5bb0474a96cc80bd5c836ff19860'
+         '3a44a49f68b2fc6394f70507235a7264'
+         '7c3ca03e53231593830fbc934672b379'
+         'c6bfe24eb6e5f190e83e7b7cae9c753f'
+         '808a7fd3ffb9a714c899733c7ac41026'
+         'c17c3be55264c18d36920cf5b90b3ed2')
 
 package() {
-    install -D -m755 gnome-shell-valgrind-errors "$pkgdir/usr/bin/gnome-shell-valgrind-errors"
-    install -D -m644 gnome-shell-valgrind-errors.desktop "$pkgdir/usr/share/applications/org.gnome.Shell-valgrind-errors.desktop"
-    install -D -m644 gnome-valgrind.session "$pkgdir/usr/share/gnome-session/sessions/gnome-valgrind-errors.session"
-    install -D -m644 gnome-valgrind-errors.desktop "$pkgdir/usr/share/wayland-sessions/gnome-valgrind-errors.desktop"
-    install -D -m644 gnome-valgrind-errors.desktop "$pkgdir/usr/share/xsessions/gnome-valgrind-errors.desktop"
+    install -D -m755 gnome-shell-valgrind "$pkgdir/usr/bin/gnome-shell-valgrind"
+    install -D -m755 gnome-shell-gdb "$pkgdir/usr/bin/gnome-shell-gdb"
+
+    install -D -m644 gnome-shell-valgrind.desktop "$pkgdir/usr/share/applications/org.gnome.Shell-valgrind.desktop"
+    install -D -m644 gnome-shell-gdb.desktop "$pkgdir/usr/share/applications/org.gnome.Shell-gdb.desktop"
+
+    install -D -m644 gnome-valgrind.session "$pkgdir/usr/share/gnome-session/sessions/gnome-valgrind.session"
+    install -D -m644 gnome-gdb.session "$pkgdir/usr/share/gnome-session/sessions/gnome-gdb.session"
+
+    install -D -m644 gnome-valgrind.desktop "$pkgdir/usr/share/wayland-sessions/gnome-valgrind.desktop"
+    install -D -m644 gnome-gdb.desktop "$pkgdir/usr/share/wayland-sessions/gnome-gdb.desktop"
+
+    install -D -m644 gnome-valgrind.desktop "$pkgdir/usr/share/xsessions/gnome-valgrind.desktop"
+    install -D -m644 gnome-gdb.desktop "$pkgdir/usr/share/xsessions/gnome-gdb.desktop"
 }

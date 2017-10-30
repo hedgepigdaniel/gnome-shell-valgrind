@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=GNOME with GDB for debugging
+Comment=This session logs you into GNOME with GDB for debugging
+Exec=/usr/bin/gnome-session --session=gnome-gdb
+TryExec=/usr/bin/gnome-session
+Icon=
+Type=Application
+DesktopNames=GNOME

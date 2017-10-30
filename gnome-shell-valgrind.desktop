@@ -2,7 +2,7 @@
 Type=Application
 Name=GNOME Shell with Valgrind checking for memory errors
 Comment=Window management and application launching
-Exec=/usr/bin/gnome-shell-valgrind-errors
+Exec=/usr/bin/gnome-shell-valgrind
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=gnome-shell
 X-GNOME-Bugzilla-Component=general
